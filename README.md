@@ -57,10 +57,15 @@ Edit `.env` and configure:
 npx prisma migrate dev --name init
 ```
 
-5. (Optional) Seed the database:
+5. Seed the database with sample data:
 ```bash
-npx prisma db seed
+npm run db:seed
 ```
+
+This will create:
+- Admin user: `admin@eternusfilmlab.com` / `admin123`
+- Demo customer: `customer@example.com` / `customer123`
+- Sample services with pricing
 
 6. Run the development server:
 ```bash
@@ -68,6 +73,13 @@ npm run dev
 ```
 
 7. Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+## Test Credentials
+
+After seeding the database, you can use these credentials:
+
+- **Admin**: `admin@eternusfilmlab.com` / `admin123`
+- **Customer**: `customer@example.com` / `customer123`
 
 ## Database Schema
 
