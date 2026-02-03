@@ -28,7 +28,7 @@ export default function DashboardPage() {
     return null;
   }
 
-  const isAdmin = (session.user as any)?.role === "ADMIN";
+  const isAdmin = session.user?.role === "ADMIN";
 
   return (
     <div className="min-h-screen p-8">

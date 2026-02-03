@@ -40,8 +40,8 @@ export async function GET(
     }
 
     // Check authorization
-    const userRole = (session.user as any).role;
-    const userId = (session.user as any).id;
+    const userRole = session.user.role;
+    const userId = session.user.id;
 
     if (userRole !== "ADMIN" && userRole !== "STAFF" && order.userId !== userId) {
       return NextResponse.json({ error: "Forbidden" }, { status: 403 });
@@ -66,7 +66,7 @@ export async function PATCH(
       return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
     }
 
-    const userRole = (session.user as any).role;
+    const userRole = session.user.role;
 
     // Only admins and staff can update orders
     if (userRole !== "ADMIN" && userRole !== "STAFF") {

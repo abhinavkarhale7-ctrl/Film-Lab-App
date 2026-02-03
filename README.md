@@ -4,7 +4,7 @@ A modern web application for managing film processing orders, customer communica
 
 ## Tech Stack
 
-- **Frontend:** Next.js 14+ with TypeScript
+- **Frontend:** Next.js 16 with TypeScript
 - **Styling:** Tailwind CSS
 - **Database:** PostgreSQL with Prisma ORM
 - **Authentication:** NextAuth.js

@@ -69,7 +69,7 @@ export async function POST(request: NextRequest) {
     const order = await prisma.order.create({
       data: {
         orderNumber,
-        userId: (session.user as any).id,
+        userId: session.user.id,
         filmType: data.filmType,
         scanType: data.scanType,
         quantity: data.quantity,
@@ -172,8 +172,8 @@ export async function GET(request: NextRequest) {
       return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
     }
 
-    const userRole = (session.user as any).role;
-    const userId = (session.user as any).id;
+    const userRole = session.user.role;
+    const userId = session.user.id;
 
     let orders;
 
